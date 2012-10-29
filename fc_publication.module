@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Fire Center Publication feature.
+ */
+
+include_once 'fc_publication.features.inc';
