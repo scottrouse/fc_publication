@@ -19,6 +19,13 @@ function fc_publication_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function fc_publication_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function fc_publication_node_info() {
