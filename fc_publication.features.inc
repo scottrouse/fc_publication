@@ -22,9 +22,9 @@ function fc_publication_node_info() {
     'publication' => array(
       'name' => t('Publication'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('A <em>Publication</em> is a downloadable file with a text description.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Publication Name'),
       'help' => '',
     ),
   );
