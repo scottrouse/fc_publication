@@ -141,6 +141,13 @@ function fc_publication_views_default_views() {
     'publication' => 'publication',
   );
 
+  /* Display: Publications Page Block */
+  $handler = $view->new_display('block', 'Publications Page Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Displays a list of all Publication nodes.';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['block_description'] = 'Publications Page';
+
   /* Display: Publications Feed */
   $handler = $view->new_display('feed', 'Publications Feed', 'feed_1');
   $handler->display->display_options['display_description'] = 'Provides an RSS Feed of Publication nodes.';
@@ -307,13 +314,6 @@ function fc_publication_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '0';
-
-  /* Display: Publications Page Block */
-  $handler = $view->new_display('block', 'Publications Page Block', 'block_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['display_description'] = 'Displays a list of all Publication nodes.';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['block_description'] = 'Publications Page';
   $export['publications'] = $view;
 
   return $export;
