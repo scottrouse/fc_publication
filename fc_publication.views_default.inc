@@ -173,6 +173,9 @@ function fc_publication_views_default_views() {
   $handler->display->display_options['title'] = 'Sort Publications';
   $handler->display->display_options['display_description'] = 'This page allows manual sorting/reordering of Publications.';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access draggableviews';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
