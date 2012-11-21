@@ -10,6 +10,7 @@ dependencies[] = draggableviews
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = file
+dependencies[] = filefield_sources
 dependencies[] = link
 dependencies[] = pathauto
 dependencies[] = publishcontent
