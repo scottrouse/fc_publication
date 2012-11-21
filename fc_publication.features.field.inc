@@ -103,6 +103,7 @@ function fc_publication_field_default_fields() {
       'settings' => array(
         'display_default' => 0,
         'display_field' => 0,
+        'profile2_private' => FALSE,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
