@@ -26,17 +26,17 @@ function fc_publication_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-publications-block_1' => array(
-          'module' => 'views',
-          'delta' => 'publications-block_1',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-13',
+        ),
+        'views-publications-block_1' => array(
+          'module' => 'views',
+          'delta' => 'publications-block_1',
+          'region' => 'content',
+          'weight' => '-12',
         ),
       ),
     ),

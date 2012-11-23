@@ -23,6 +23,7 @@ function fc_publication_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Publications';
+  $handler->display->display_options['css_class'] = 'fc-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -32,7 +33,6 @@ function fc_publication_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
@@ -60,13 +60,26 @@ function fc_publication_views_default_views() {
   $handler->display->display_options['fields']['filesize']['exclude'] = TRUE;
   $handler->display->display_options['fields']['filesize']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['filesize']['element_default_classes'] = FALSE;
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_pub_description']['id'] = 'field_pub_description';
+  $handler->display->display_options['fields']['field_pub_description']['table'] = 'field_data_field_pub_description';
+  $handler->display->display_options['fields']['field_pub_description']['field'] = 'field_pub_description';
+  $handler->display->display_options['fields']['field_pub_description']['label'] = '';
+  $handler->display->display_options['fields']['field_pub_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_pub_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pub_description']['element_default_classes'] = FALSE;
   /* Field: Content: Local File */
   $handler->display->display_options['fields']['field_pub_file']['id'] = 'field_pub_file';
   $handler->display->display_options['fields']['field_pub_file']['table'] = 'field_data_field_pub_file';
   $handler->display->display_options['fields']['field_pub_file']['field'] = 'field_pub_file';
   $handler->display->display_options['fields']['field_pub_file']['label'] = '';
   $handler->display->display_options['fields']['field_pub_file']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_pub_file']['alter']['text'] = '<h3><a href="[field_pub_file]" class="local-file" title="[title]">[title]</a></h3>([filesize])';
+  $handler->display->display_options['fields']['field_pub_file']['alter']['text'] = '<h4>[title]</h4>([filesize])
+[field_pub_description]';
+  $handler->display->display_options['fields']['field_pub_file']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_pub_file']['alter']['path'] = '[field_pub_file]';
+  $handler->display->display_options['fields']['field_pub_file']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['field_pub_file']['alter']['link_class'] = 'local-file';
   $handler->display->display_options['fields']['field_pub_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pub_file']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pub_file']['click_sort_column'] = 'fid';
@@ -77,18 +90,17 @@ function fc_publication_views_default_views() {
   $handler->display->display_options['fields']['field_pub_link']['field'] = 'field_pub_link';
   $handler->display->display_options['fields']['field_pub_link']['label'] = '';
   $handler->display->display_options['fields']['field_pub_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_pub_link']['alter']['text'] = '<h3><a href="[field_pub_link-url]" class="external-file" title="[title]">[title]</a></h3>';
+  $handler->display->display_options['fields']['field_pub_link']['alter']['text'] = '<h4>[title]</h4>
+[field_pub_description]';
+  $handler->display->display_options['fields']['field_pub_link']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_pub_link']['alter']['path'] = '[field_pub_link-url]';
+  $handler->display->display_options['fields']['field_pub_link']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['field_pub_link']['alter']['rel'] = 'nofollow';
+  $handler->display->display_options['fields']['field_pub_link']['alter']['link_class'] = 'external-file';
   $handler->display->display_options['fields']['field_pub_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pub_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pub_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_pub_link']['type'] = 'link_plain';
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['field_pub_description']['id'] = 'field_pub_description';
-  $handler->display->display_options['fields']['field_pub_description']['table'] = 'field_data_field_pub_description';
-  $handler->display->display_options['fields']['field_pub_description']['field'] = 'field_pub_description';
-  $handler->display->display_options['fields']['field_pub_description']['label'] = '';
-  $handler->display->display_options['fields']['field_pub_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pub_description']['element_default_classes'] = FALSE;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
